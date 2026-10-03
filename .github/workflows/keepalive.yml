@@ -1,1 +1,22 @@
+name: Keep Supabase Active
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *' # Berjalan otomatis setiap 3 hari
+  workflow_dispatch: # Membuat tombol "Run workflow" muncul manual
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Application URL
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+        run: |
+          if [ -z "$APP_URL" ]; then
+            echo "Error: Variabel APP_URL belum diatur di Settings repositori Anda."
+            exit 1
+          fi
+          echo "Menyentuh aplikasi untuk mengaktifkan database Supabase..."
+          curl -sI "$APP_URL" | head -n 1
 
