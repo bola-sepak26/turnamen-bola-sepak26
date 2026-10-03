@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --ink: #000000;
+  --accent: #ff4d00;
+  --accent-hover: #ff651a;
+  --surface: #ffffff;
+  --ink-faint: rgba(0, 0, 0, 0.08);
+  --ink-muted: #000000;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #000000;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, .font-syne {
+    font-family: 'Syne', sans-serif;
+    color: #000000;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: #000000;
+  }
+}
+
+/* High-Density Grid background pattern from Variation 23 (Light Mode with black text) */
+.bg-v23-grid, .bg-terminal-grid {
+  background-color: #f8fafc;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.badge-pending {
+  color: #000000 !important;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+.badge-sah {
+  color: #000000 !important;
+  background: #d1fae5;
+  border: 1px solid #10b981;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+::selection {
+  background: #ff4d00;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+@media print {
+  @page {
+    margin: 10mm;
+    size: auto;
+  }
+  
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+
+  body:has(.print-receipt-modal) aside,
+  body:has(.print-receipt-modal) header,
+  body:has(.print-receipt-modal) main {
+    display: none !important;
+  }
+}
+

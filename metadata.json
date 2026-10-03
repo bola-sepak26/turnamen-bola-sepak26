@@ -1,0 +1,6 @@
+{
+  "name": "KingDC - Sistem Administrasi Turnamen Sepak Bola",
+  "description": "Aplikasi komprehensif administrasi dan pendaftaran tim turnamen sepak bola: verifikasi pemain, roster keabsahan, drawing grup, kuitansi registrasi, dan cetak ID Card.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
